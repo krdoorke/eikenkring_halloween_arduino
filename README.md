@@ -23,8 +23,8 @@ Author: Kristof Van Doorsselaere
 - after 30 seconds stop animation
 
 # Remarks
-- animation will maximum run once every 45 seconds (param period)
-- Sound volume is set to maximem (param Volume)
+- animation will maximum run once every 45 seconds (param period = 45000)
+- Sound volume is set to maximum (param Volume = 30)
 
 # Required hardware
 - arduino Uno
@@ -45,4 +45,4 @@ Author: Kristof Van Doorsselaere
 - pin 10: RX (mp3player)
 
 # Casing
--
+- All components will be housed in a birdhouse, with ultrasonic sensor placed in front of the hole, see pictures
