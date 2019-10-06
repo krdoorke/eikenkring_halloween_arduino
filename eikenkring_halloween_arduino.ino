@@ -36,10 +36,10 @@ void setup() {
   digitalWrite(RELAY_LINE3_PIN, LOW);               // Turn the relay 3 off
   mp3.begin(9600);                                  // start mp3-communication
   delay(500);                                       // wait for init
-  mp3.sendCommand(CMD_SEL_DEV, 0, 2);               //select sd-card
+  mp3.sendCommand(CMD_SEL_DEV, 0, 2);               // select sd-card
   delay(500);                                       // wait for init
   mp3.setVol(Volume);                               // set Volume
-  startMillis = millis();                           //initial start time;
+  startMillis = millis();                           // initial start time;
 }
 
 void loop() {
@@ -50,8 +50,8 @@ void loop() {
   unsigned int distance = readDistance();           // Current distance of any object facing the ultrasonic sensor
   //Serial.print("Seconds since last start:" );
   //Serial.println((currentMillis-startMillis)/1000);
-  //Serial.print("afstand:");      // Send ping, get distance in cm and print result (0 = outside set distance range)
-  //Serial.println(distance);      // Send ping, get distance in cm and print result (0 = outside set distance range)
+  //Serial.print("distance:");
+  //Serial.println(distance);
   if (distance < 250) 
   {
      if (AnimationRunning)
