@@ -21,7 +21,7 @@ SerialMP3Player mp3(RX,TX);                         // SerialMP3Player
 bool AnimationRunning = false;                      // boolean used to define if animation is already running
 unsigned long startMillis;                          // animation start time
 unsigned long currentMillis;                        // current time
-const unsigned long period = 45000;                 // 30 seconds
+const unsigned long period = 45000;                 // do not run animation more than once every 45 seconds
 const unsigned Volume = 30;
 
 void setup() {
