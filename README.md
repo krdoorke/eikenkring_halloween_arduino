@@ -32,7 +32,7 @@ Author: Kristof Van Doorsselaere
 - ultrasonic sensor 
 - serialmp3player
 - sound box
-- ausio cable
+- audio cable
 - prototype board
 
 # Pin layout
