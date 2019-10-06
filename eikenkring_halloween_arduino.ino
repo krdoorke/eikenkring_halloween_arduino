@@ -2,9 +2,9 @@
 #include <SimpleTimer.h>                            // non standard library, download and define here
 SimpleTimer timer;                                  // create object SimpleTimer named timer
 
-#define RELAY_LINE1_PIN 2                           // used to poweron the stroboscoop
-#define RELAY_LINE2_PIN 3                           // used to poweron the stroboscoop
-#define RELAY_LINE3_PIN 4                           // used to activate the smoke machine
+#define RELAY_LINE1_PIN 2                           // relay 1 pin used to poweron the stroboscoop
+#define RELAY_LINE2_PIN 3                           // relay 2 pin used to poweron the stroboscoop
+#define RELAY_LINE3_PIN 4                           // relay 3 pin used to activate the smoke machine
 
 #define ECHO_PIN     5                              // Arduino pin tied to echo pin on the ultrasonic sensor.
 #define TRIGGER_PIN  6                              // Arduino pin tied to trigger pin on the ultrasonic sensor.
