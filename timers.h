@@ -11,6 +11,5 @@ void runAnimation() {
 
 void periodicalAnimation() {
     timer.setTimeout(10, activate_sound2);
-    timer.setTimeout(5000, stop_Animation);
+    timer.setTimeout(8000, stop_Animation);
 }
-

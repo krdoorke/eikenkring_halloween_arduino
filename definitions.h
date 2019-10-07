@@ -25,6 +25,6 @@ unsigned long timeSinceLastRun;                     // time since last run
 const unsigned long waitTime = 10000;               // wait at least x miliseconds to start again
 const unsigned long minimalInterval = 240000;       // play animation at least once every x milliseconds (to prevent audio box to go into sleep mode)
 const unsigned int minimalDistance = 180;           // minimal dinstance for object to be detected
-const unsigned int volume = 20;                     // MP3 player volume (30 = maximum)
+const unsigned int volume = 30;                     // MP3 player volume (30 = maximum)
 
 bool Debug = false;

@@ -54,7 +54,7 @@ void activate_sound1() {
   if (Debug) {
     Serial.println("Starting Sound 1");
   }
-  mp3.wakeup();
+  //mp3.wakeup();
   mp3.playF(1);
 }
 
@@ -63,7 +63,7 @@ void activate_sound2() {
   if (Debug) {
     Serial.println("Starting Sound 2");
   }
-  mp3.wakeup();
+  //mp3.wakeup();
   mp3.playF(2);
 }
 
@@ -73,7 +73,7 @@ void stop_Animation() {
     Serial.println("Stopping sound");
   }
   mp3.stop();
-  mp3.sleep();
+  //mp3.sleep();
   stopMillis = currentMillis;
   AnimationRunning = false;
   if (Debug) {
