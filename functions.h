@@ -67,6 +67,30 @@ void activate_sound2() {
   mp3.playF(2);
 }
 
+// Function to activate third sound effect
+void activate_sound3() {
+  if (Debug) {
+    Serial.println("Starting Background Sound");
+  }
+  //mp3.wakeup();
+  mp3.playF(3);
+}
+
+// Function to stop third sound effect
+void stop_sound2() {
+  if (Debug) {
+    Serial.println("Stopping Sound 2");
+  }
+  mp3.stop();
+}
+
+void stop_backgroundsound() {
+  if (Debug) {
+    Serial.println("Stopping Background Sound");
+  }
+  BackgroundSoundActivated = false;
+}
+
 // Function to finalyse animation
 void stop_Animation() {
   if (Debug) {

@@ -16,8 +16,8 @@ void setup() {
   delay(500);                                       // wait for init
   mp3.sendCommand(CMD_SEL_DEV, 0, 2);               // select sd-card
   delay(500);                                       // wait for init
-  mp3.setVol(volume);                               // set volume
   stopMillis = millis();                            // initial stop time;
+  mp3.setVol(volume);                               // sound volume
 }
 
 void loop() {
@@ -33,50 +33,51 @@ void loop() {
   }
   timeSinceLastRun = currentMillis - stopMillis;
   if (Debug) {
-    Serial.print("timeSinceLastRun:");
+    Serial.print("timeSinceLastRun (sec):");
     Serial.println(timeSinceLastRun/1000);
   }
-  if (timeSinceLastRun > minimalInterval) 
-    {
-    if (AnimationRunning)
-    {
-      if (Debug) {
-        Serial.println("Animation already running");
-      }
-    } 
-    else
-    {
-       AnimationRunning = true;
-       periodicalAnimation();                            // this keeps the audio device awake
+
+  if (AnimationRunning)
+  {
+    if (Debug) {
+      Serial.println("Animation already running");
     }
   }
   else
   {
     if (distance < minimalDistance) 
     {
-       if (AnimationRunning)
-       {
+      if (currentMillis - stopMillis >= waitTime)
+      {
          if (Debug) {
-           Serial.println("Animation already running");
+           Serial.println("Starting Animation");
          }
-       } 
+         AnimationRunning = true;
+         runAnimation();
+       }
        else
        {
-         if (currentMillis - stopMillis >= waitTime)
-           {
-             if (Debug) {
-               Serial.println("Starting Animation");
-             }
-             AnimationRunning = true;
-             runAnimation();
-           }
-           else
-           {
-             if (Debug) {
-              Serial.println("Waiting few seconds before activating again");
-             }
-          }
+         if (Debug) {
+           Serial.println("Waiting few seconds before activating again");
+         }
        }
+    }
+    else
+    {
+      if (BackgroundSoundActivated)
+      {
+        if (Debug) {
+          Serial.println("Background sound already activated");
+        }
+      }
+      else
+      {
+        if (Debug) {
+          Serial.println("Activating background sound");
+        }
+        runBackgroundSound();
+        BackgroundSoundActivated = true;
+      }
     }
   }
 }

@@ -18,13 +18,14 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and
 SerialMP3Player mp3(RX,TX);                         // SerialMP3Player 
 
 bool AnimationRunning = false;                      // boolean used to define if animation is already running
+bool BackgroundSoundActivated = false;              // boolean used to define if background sound is already running
+
 unsigned long stopMillis;                           // animation last stop time
 unsigned long currentMillis;                        // current time
 unsigned long timeSinceLastRun;                     // time since last run
 
 const unsigned long waitTime = 10000;               // wait at least x miliseconds to start again
-const unsigned long minimalInterval = 240000;       // play animation at least once every x milliseconds (to prevent audio box to go into sleep mode)
 const unsigned int minimalDistance = 180;           // minimal dinstance for object to be detected
-const unsigned int volume = 30;                     // MP3 player volume (30 = maximum)
+const unsigned int volume = 30;                     // MP3 player volume used during Animation(30 = maximum)
 
 bool Debug = false;
