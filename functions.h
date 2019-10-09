@@ -16,25 +16,19 @@ unsigned int readDistance() {
 
 // Function to activate smoke machine
 void activate_smoke() {
-  if (Debug) {
-    Serial.println("Starting Smoke Machine");
-  }
+  Serial.println("Starting Smoke Machine");
   digitalWrite(RELAY_LINE3_PIN, HIGH); // Turn the smoke on
 }
 
 // Function to stop smoke machine
 void stop_smoke() {
-  if (Debug) {
-    Serial.println("Stopping Smoke Animation");
-  }
+  Serial.println("Stopping Smoke Animation");
   digitalWrite(RELAY_LINE3_PIN, LOW); // Turn the soke off
 }
 
 // Function to activate stroboscoop
 void activate_stroboscoop() {
-  if (Debug) {
-    Serial.println("Starting Stroboscoop Animation");
-  }
+  Serial.println("Starting Stroboscoop Animation");
   digitalWrite(RELAY_LINE1_PIN, HIGH); // Turn the strobo on
   digitalWrite(RELAY_LINE2_PIN, HIGH); // Turn the strobo on
 
@@ -42,65 +36,31 @@ void activate_stroboscoop() {
 
 // Function to activate stroboscoop
 void stop_stroboscoop() {
-  if (Debug) {
-    Serial.println("Stopping Stroboscoop");
-  }
+  Serial.println("Stopping Stroboscoop");
   digitalWrite(RELAY_LINE1_PIN, LOW); // Turn the strobo off
   digitalWrite(RELAY_LINE2_PIN, LOW); // Turn the strobo ff
 }
 
 // Function to activate first sound effect
 void activate_sound1() {
-  if (Debug) {
-    Serial.println("Starting Sound 1");
-  }
-  //mp3.wakeup();
+  Serial.println("Starting Sound 1");
   mp3.playF(1);
 }
 
 // Function to activate second sound effect
 void activate_sound2() {
-  if (Debug) {
-    Serial.println("Starting Sound 2");
-  }
-  //mp3.wakeup();
+  Serial.println("Starting Sound 2");
   mp3.playF(2);
 }
 
 // Function to activate third sound effect
 void activate_sound3() {
-  if (Debug) {
-    Serial.println("Starting Background Sound");
-  }
-  //mp3.wakeup();
+  Serial.println("Starting Background Sound");
   mp3.playF(3);
 }
 
 // Function to stop third sound effect
-void stop_sound2() {
-  if (Debug) {
-    Serial.println("Stopping Sound 2");
-  }
+void stop_sound() {
+  Serial.println("Stopping Sound");
   mp3.stop();
-}
-
-void stop_backgroundsound() {
-  if (Debug) {
-    Serial.println("Stopping Background Sound");
-  }
-  BackgroundSoundActivated = false;
-}
-
-// Function to finalyse animation
-void stop_Animation() {
-  if (Debug) {
-    Serial.println("Stopping sound");
-  }
-  mp3.stop();
-  //mp3.sleep();
-  stopMillis = currentMillis;
-  AnimationRunning = false;
-  if (Debug) {
-    Serial.println("Animation done");
-  }
 }

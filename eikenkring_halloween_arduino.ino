@@ -16,68 +16,61 @@ void setup() {
   delay(500);                                       // wait for init
   mp3.sendCommand(CMD_SEL_DEV, 0, 2);               // select sd-card
   delay(500);                                       // wait for init
-  stopMillis = millis();                            // initial stop time;
   mp3.setVol(volume);                               // sound volume
 }
 
-void loop() {
+void loop()
+{
   currentMillis = millis();                         // get current time
   timer.run();                                      // run simple timer
   delay(30);                                        // Wait 30ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
   unsigned int distance = readDistance();           // Current distance of any object facing the ultrasonic sensor
-  if (Debug) {
-    Serial.print("Seconds since last animation stopped:" );
-    Serial.println((currentMillis-stopMillis)/1000);
-    Serial.print("distance:");
-    Serial.println(distance);
-  }
-  timeSinceLastRun = currentMillis - stopMillis;
-  if (Debug) {
-    Serial.print("timeSinceLastRun (sec):");
-    Serial.println(timeSinceLastRun/1000);
-  }
-
-  if (AnimationRunning)
+  if (distance < minimalDistance) 
   {
-    if (Debug) {
-      Serial.println("Animation already running");
+    runAnimation();
+  }
+  else
+  {
+    runBackgroundSound();
+  }
+}
+
+void runAnimation() {
+  if (animationActivated) {
+    animationRunTime = currentMillis - animationStartMillis;
+    if (animationRunTime > animationDuration) {
+      animationActivated = false;
     }
   }
   else
   {
-    if (distance < minimalDistance) 
-    {
-      if (currentMillis - stopMillis >= waitTime)
-      {
-         if (Debug) {
-           Serial.println("Starting Animation");
-         }
-         AnimationRunning = true;
-         runAnimation();
-       }
-       else
-       {
-         if (Debug) {
-           Serial.println("Waiting few seconds before activating again");
-         }
-       }
+    animationStartMillis = millis();
+    animationActivated = true;
+    backgroundSoundActivated = false;
+    activateAnimation();
+  }
+}
+
+void runBackgroundSound() {
+  if (backgroundSoundActivated) {
+    backgroundSoundRunTime = currentMillis - backgroundSoundStartMillis;
+    if (backgroundSoundRunTime > backgroundSoundDuration) {
+      backgroundSoundActivated = false;
+    }
+  }
+  else
+  {
+    if (animationActivated) {
+      animationRunTime = currentMillis - animationStartMillis;
+      if (animationRunTime > animationDuration) {
+        animationActivated = false;
+      }
     }
     else
     {
-      if (BackgroundSoundActivated)
-      {
-        if (Debug) {
-          Serial.println("Background sound already activated");
-        }
-      }
-      else
-      {
-        if (Debug) {
-          Serial.println("Activating background sound");
-        }
-        runBackgroundSound();
-        BackgroundSoundActivated = true;
-      }
+      backgroundSoundStartMillis = millis();
+      backgroundSoundActivated = true;
+      activateBackgroundSound();
     }
   }
 }
