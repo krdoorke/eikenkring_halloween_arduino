@@ -17,13 +17,13 @@ unsigned int readDistance() {
 // Function to activate smoke machine
 void activate_smoke() {
   Serial.println("Starting Smoke Machine");
-  digitalWrite(RELAY_LINE3_PIN, HIGH); // Turn the smoke on
+  digitalWrite(RELAY_LINE3_PIN, HIGH); // Turn the smoke machine on
 }
 
 // Function to stop smoke machine
 void stop_smoke() {
   Serial.println("Stopping Smoke Animation");
-  digitalWrite(RELAY_LINE3_PIN, LOW); // Turn the soke off
+  digitalWrite(RELAY_LINE3_PIN, LOW); // Turn the smoke machine off
 }
 
 // Function to activate stroboscoop
@@ -38,7 +38,7 @@ void activate_stroboscoop() {
 void stop_stroboscoop() {
   Serial.println("Stopping Stroboscoop");
   digitalWrite(RELAY_LINE1_PIN, LOW); // Turn the strobo off
-  digitalWrite(RELAY_LINE2_PIN, LOW); // Turn the strobo ff
+  digitalWrite(RELAY_LINE2_PIN, LOW); // Turn the strobo off
 }
 
 // Function to activate first sound effect
