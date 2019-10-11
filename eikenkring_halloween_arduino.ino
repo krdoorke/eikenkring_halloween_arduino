@@ -47,6 +47,7 @@ void runAnimation() {
     animationStartMillis = millis();
     animationActivated = true;
     backgroundSoundActivated = false;
+    Serial.println("Activating Animation!");
     activateAnimation();
   }
 }
@@ -70,6 +71,7 @@ void runBackgroundSound() {
     {
       backgroundSoundStartMillis = millis();
       backgroundSoundActivated = true;
+      Serial.println("Activating background sound!");
       activateBackgroundSound();
     }
   }

@@ -23,13 +23,14 @@ bool backgroundSoundActivated = false;              // boolean used to define if
 unsigned long animationStartMillis;                 // animation last start time
 unsigned long backgroundSoundStartMillis;           // background sound last start time
 unsigned long currentMillis;                        // current time
-unsigned long timeSinceLastRun;                     // time since last run
-unsigned long timerid;                              // time since last run
-unsigned long animationRunTime;                      // time since animation is running
-unsigned long backgroundSoundRunTime;                // time since background sound is activated
+unsigned long animationRunTime;                     // time since animation is running
+unsigned long backgroundSoundRunTime;               // time since background sound is activated
 const unsigned long animationDuration = 16000;      // duration of 1 animation run time
-const unsigned long backgroundSoundDuration = 60000;      // duration of 1 animation run time
+const unsigned long backgroundSoundDuration = 60000;// duration of 1 animation run time
 const unsigned int minimalDistance = 180;           // minimal dinstance for object to be detected
 const unsigned int volume = 30;                     // MP3 player volume used during Animation(30 = maximum)
 
 bool Debug = true;
+
+// To do: use logging library to have different levels of debugging
+#include <ArduinoLog.h>

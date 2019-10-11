@@ -55,7 +55,7 @@ void activate_sound2() {
 
 // Function to activate third sound effect
 void activate_sound3() {
-  Serial.println("Starting Background Sound");
+  Serial.println("(re)Starting Background Sound");
   mp3.playF(3);
 }
 
