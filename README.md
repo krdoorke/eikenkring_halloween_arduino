@@ -11,20 +11,20 @@ Author: Kristof Van Doorsselaere
 - SerialMP3Player
 
 # Project goal
-- As soon as someone is detected in less than 2,5m start halloween animation
+- As soon as someone is detected in less than 2m start halloween animation
 
 # Halloween animation
-- after 1 ms start sound 1
+- after 10 ms start sound 2 (halloween scream)
 - after 3 seconds start stroboscoop
 - after 5 seconds start smoke machine
+- after 5.5 seconds stop sound
 - after 8 seconds start stroboscoop
 - after 15 seconds stop smoke machine
-- after 20 seconds start sound 2
-- after 30 seconds stop animation
+- after 15.5 seconds start sound 1  (bats flying nearby)
 
 # Remarks
-- animation will maximum run once every 45 seconds (param period = 45000)
 - Sound volume is set to maximum (param Volume = 30)
+- when no one is detected, a background sound is activated (blowing wind)
 
 # Required hardware
 - arduino Uno
