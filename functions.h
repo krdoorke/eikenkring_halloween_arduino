@@ -14,32 +14,59 @@ unsigned int readDistance() {
   return distance;
 }
 
-// Function to activate smoke machine
-void activate_smoke() {
-  Serial.println("Starting Smoke Machine");
-  digitalWrite(RELAY_LINE3_PIN, HIGH); // Turn the smoke machine on
+// Function to activate leaf blower
+void activate_leaf_blower() {
+  Serial.println("Starting light effects Animation");
+  digitalWrite(RELAY_LINE1_PIN, HIGH); // Turn the leaf blower on
+
 }
 
-// Function to stop smoke machine
-void stop_smoke() {
-  Serial.println("Stopping Smoke Animation");
-  digitalWrite(RELAY_LINE3_PIN, LOW); // Turn the smoke machine off
+// Function to stop the leaf blower
+void stop_leaf_blower() {
+  Serial.println("Stopping light effects");
+  digitalWrite(RELAY_LINE1_PIN, LOW); // Turn the leaf blower off
 }
 
 // Function to activate stroboscoop
 void activate_stroboscoop() {
   Serial.println("Starting Stroboscoop Animation");
-  digitalWrite(RELAY_LINE1_PIN, HIGH); // Turn the strobo on
   digitalWrite(RELAY_LINE2_PIN, HIGH); // Turn the strobo on
 
 }
 
-// Function to activate stroboscoop
+// Function to stop the stroboscoop
 void stop_stroboscoop() {
   Serial.println("Stopping Stroboscoop");
-  digitalWrite(RELAY_LINE1_PIN, LOW); // Turn the strobo off
   digitalWrite(RELAY_LINE2_PIN, LOW); // Turn the strobo off
 }
+
+
+// Function to activate light effects
+void activate_light_effects() {
+  Serial.println("Starting light effects Animation");
+  digitalWrite(RELAY_LINE3_PIN, HIGH); // Turn the light effects on
+
+}
+
+// Function to stop light effects
+void stop_light_effects() {
+  Serial.println("Stopping light effects");
+  digitalWrite(RELAY_LINE3_PIN, LOW); // Turn the light effects off
+}
+
+// Function to activate smoke machine
+void activate_smoke() {
+  Serial.println("Starting Smoke Machine");
+  digitalWrite(RELAY_LINE4_PIN, HIGH); // Turn the smoke machine on
+}
+
+// Function to stop smoke machine
+void stop_smoke() {
+  Serial.println("Stopping Smoke Animation");
+  digitalWrite(RELAY_LINE4_PIN, LOW); // Turn the smoke machine off
+}
+
+
 
 // Function to activate first sound effect
 void activate_sound1() {
@@ -57,6 +84,12 @@ void activate_sound2() {
 void activate_sound3() {
   Serial.println("(re)Starting Background Sound");
   mp3.playF(3);
+}
+
+// Function to activate third sound effect
+void activate_sound4() {
+  Serial.println("Starting Countdown Sound");
+  mp3.playF(4);
 }
 
 // Function to stop third sound effect

@@ -9,9 +9,11 @@ void setup() {
   pinMode(RELAY_LINE1_PIN, OUTPUT);                 // define relay pin 1 as output
   pinMode(RELAY_LINE2_PIN, OUTPUT);                 // define relay pin 2 as output
   pinMode(RELAY_LINE3_PIN, OUTPUT);                 // define relay pin 3 as output
+  pinMode(RELAY_LINE4_PIN, OUTPUT);                 // define relay pin 4 as output
   digitalWrite(RELAY_LINE1_PIN, LOW);               // Turn the relay 1 off
   digitalWrite(RELAY_LINE2_PIN, LOW);               // Turn the relay 2 off
   digitalWrite(RELAY_LINE3_PIN, LOW);               // Turn the relay 3 off
+  digitalWrite(RELAY_LINE4_PIN, LOW);               // Turn the relay 4 off
   mp3.begin(9600);                                  // start mp3-communication
   delay(500);                                       // wait for init
   mp3.sendCommand(CMD_SEL_DEV, 0, 2);               // select sd-card

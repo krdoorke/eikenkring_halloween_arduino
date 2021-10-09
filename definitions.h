@@ -1,9 +1,11 @@
 #include <SimpleTimer.h>                            // non standard library, download and define here
 SimpleTimer timer;                                  // create object SimpleTimer named timer
 
-#define RELAY_LINE1_PIN 2                           // relay 1 pin used to poweron the stroboscoop
+#define RELAY_LINE1_PIN 2                           // relay 1 pin used to poweron the leaf blower
 #define RELAY_LINE2_PIN 3                           // relay 2 pin used to poweron the stroboscoop
-#define RELAY_LINE3_PIN 4                           // relay 3 pin used to activate the smoke machine
+#define RELAY_LINE3_PIN 4                           // relay 3 pin used to activate the light effects
+#define RELAY_LINE4_PIN 7                           // relay 4 pin used to activate the smoke machine
+
 
 #define ECHO_PIN     5                              // Arduino pin tied to echo pin on the ultrasonic sensor.
 #define TRIGGER_PIN  6                              // Arduino pin tied to trigger pin on the ultrasonic sensor.
@@ -25,8 +27,8 @@ unsigned long backgroundSoundStartMillis;           // background sound last sta
 unsigned long currentMillis;                        // current time
 unsigned long animationRunTime;                     // time since animation is running
 unsigned long backgroundSoundRunTime;               // time since background sound is activated
-const unsigned long animationDuration = 16000;      // duration of 1 animation run time
-const unsigned long backgroundSoundDuration = 60000;// duration of 1 animation run time
+const unsigned long animationDuration = 45000;      // duration of 1 animation run time
+const unsigned long backgroundSoundDuration = 60000;// duration of backgroundsound
 const unsigned int minimalDistance = 180;           // minimal dinstance for object to be detected
 const unsigned int volume = 30;                     // MP3 player volume used during Animation(30 = maximum)
 
