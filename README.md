@@ -34,19 +34,24 @@ Author: Kristof Van Doorsselaere
 
 # Required hardware
 - arduino Uno
-- 8 channel relay board
+- 4 channel relay board
 - ultrasonic sensor 
 - serialmp3player
 - sound box
 - audio cable
 - prototype board
+- smoke machine
+- stroboscoop
+- light effects
+- leaf blower
 
 # Pin layout
-- pin 2: relay 1  (used for stroboscoop)
+- pin 2: relay 1  (used for leaf blower)
 - pin 3: relay 2  (used for stroboscoop)
-- pin 4: relay 3  (used for smoke machine)
+- pin 4: relay 3  (used for light effects)
 - pin 5: echo pin (ultrasonic sensor)
 - pin 6: trigger pin (ultrasonic sensor)
+- pin 7: relay 4  (used for smoke machine)
 - pin 9: TX (mp3player)
 - pin 10: RX (mp3player)
 
