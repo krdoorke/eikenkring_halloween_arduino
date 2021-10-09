@@ -14,13 +14,19 @@ Author: Kristof Van Doorsselaere
 - As soon as someone is detected in less than 2m start halloween animation
 
 # Halloween animation
-- after 10 ms start sound 2 (halloween scream)
-- after 3 seconds start stroboscoop
-- after 5 seconds start smoke machine
+- after 10 ms start sound 2 (Wolf scream)
+- after 3 seconds start smoke machine
 - after 5.5 seconds stop sound
-- after 8 seconds start stroboscoop
-- after 15 seconds stop smoke machine
+- after 10 seconds start stroboscoop
+- after 18 seconds stop stroboscoop
+- after 13 seconds stop smoke machine
 - after 15.5 seconds start sound 1  (bats flying nearby)
+- after 17 seconds start leafblower
+- after 25 seconds stop leafblower
+- after 20 seconds start light effects
+- after 35 seconds start sound (exit count down)
+- after 37 seconds stop light effects
+- after 45 seconds stop sound
 
 # Remarks
 - Sound volume is set to maximum (param Volume = 30)
