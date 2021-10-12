@@ -1,7 +1,7 @@
 # Eikenkring_halloween_arduino
 
 Arduino sketch created for the halloween event @ Leefschool Eikenkring.
-2019
+2019, and updated in 2021
 
 Author: Kristof Van Doorsselaere
 
