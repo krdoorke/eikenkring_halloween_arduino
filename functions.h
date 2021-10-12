@@ -16,14 +16,13 @@ unsigned int readDistance() {
 
 // Function to activate leaf blower
 void activate_leaf_blower() {
-  Serial.println("Starting light effects Animation");
+  Serial.println("Starting leaf blower Animation");
   digitalWrite(RELAY_LINE1_PIN, HIGH); // Turn the leaf blower on
-
 }
 
 // Function to stop the leaf blower
 void stop_leaf_blower() {
-  Serial.println("Stopping light effects");
+  Serial.println("Stopping leaf blower");
   digitalWrite(RELAY_LINE1_PIN, LOW); // Turn the leaf blower off
 }
 
@@ -31,7 +30,6 @@ void stop_leaf_blower() {
 void activate_stroboscoop() {
   Serial.println("Starting Stroboscoop Animation");
   digitalWrite(RELAY_LINE2_PIN, HIGH); // Turn the strobo on
-
 }
 
 // Function to stop the stroboscoop
@@ -45,7 +43,6 @@ void stop_stroboscoop() {
 void activate_light_effects() {
   Serial.println("Starting light effects Animation");
   digitalWrite(RELAY_LINE3_PIN, HIGH); // Turn the light effects on
-
 }
 
 // Function to stop light effects

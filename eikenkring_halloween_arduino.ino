@@ -24,7 +24,8 @@ void setup() {
 void loop()
 {
   currentMillis = millis();                         // get current time
-  timer.run();                                      // run simple timer
+  animation_timer.run();                            // run animation timer
+  sound_timer.run();                                // run sound timer
   delay(30);                                        // Wait 30ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
   unsigned int distance = readDistance();           // Current distance of any object facing the ultrasonic sensor
   if (distance < minimalDistance) 
@@ -41,6 +42,7 @@ void runAnimation() {
   if (animationActivated) {
     animationRunTime = currentMillis - animationStartMillis;
     if (animationRunTime > animationDuration) {
+      //Serial.println("Animation stopped!");
       animationActivated = false;
     }
   }
@@ -65,6 +67,7 @@ void runBackgroundSound() {
   {
     if (animationActivated) {
       animationRunTime = currentMillis - animationStartMillis;
+      //Serial.println(animationRunTime);
       if (animationRunTime > animationDuration) {
         animationActivated = false;
       }
